@@ -1,0 +1,174 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  padding: 8px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Пункты меню: белая заливка при наведении */
+.link {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease);
+}
+
+.link:hover,
+.active {
+  background: var(--white);
+  border-color: var(--white);
+  color: #000000;
+}
+
+.cart {
+  border-color: var(--line-strong);
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition:
+    background var(--ease),
+    border-color var(--ease);
+}
+
+.burger:hover {
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.burgerLine {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--text);
+  transition:
+    transform var(--ease),
+    background var(--ease);
+}
+
+.burger:hover .burgerLine {
+  background: #000000;
+}
+
+.burgerTop {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.burgerBottom {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+@media (max-width: 1080px) {
+  .burger {
+    display: inline-flex;
+  }
+
+  .account {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px var(--gutter) 20px;
+    background: #000000;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .nav .link {
+    justify-content: flex-start;
+  }
+
+  .nav .mobileOnly {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    gap: 12px;
+  }
+
+  .cart {
+    padding: 0 12px;
+    font-size: 10px;
+  }
+}
+
+
+.bar { padding: 6px var(--gutter); font-size: 8px; letter-spacing: .2em; color: #888; }
+.inner { min-height: 82px; padding-top: 12px; padding-bottom: 12px; }
+.link { font-size: 9px; font-weight: 500; letter-spacing: .14em; padding: 0 14px; border-radius: 0; color: #bbb; }
+.link:hover, .active { background: transparent; border-color: transparent; color: #fff; text-decoration: underline; text-underline-offset: 8px; }
+.cart { border-color: transparent; }
+.nav { gap: 12px; }
+@media (max-width: 600px) { .inner { min-height: 70px; } .link { padding: 0 8px; } }

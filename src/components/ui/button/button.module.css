@@ -1,0 +1,113 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body-stack);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease),
+    box-shadow var(--ease);
+}
+
+.sm {
+  height: 44px;
+  padding: 0 16px;
+  font-size: 10px;
+}
+
+.md {
+  height: 50px;
+  padding: 0 24px;
+  font-size: 11px;
+}
+
+.lg {
+  height: 56px;
+  padding: 0 26px;
+  font-size: 11px;
+}
+
+.block {
+  display: flex;
+  width: 100%;
+}
+
+.withArrow {
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  transition: transform var(--ease);
+}
+
+.button:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Обводка: при наведении — белая заливка */
+.outline {
+  border-color: var(--line-hover);
+}
+
+.outline:hover,
+.ghost:hover,
+.active {
+  background: var(--white);
+  border-color: var(--white);
+  color: #000000;
+}
+
+/* Без рамки (пункты меню) */
+.ghost {
+  font-weight: 600;
+}
+
+/* Сплошная светлая: при наведении — прозрачная с белой обводкой */
+.solid {
+  background: var(--text);
+  border-color: var(--text);
+  color: #000000;
+}
+
+.solid:hover {
+  background: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+.button { transition: background .25s ease, color .25s ease, border-color .25s ease, box-shadow .28s ease; }
+.outline, .ghost { background: rgba(255,255,255,.025); }
+.button:not(:disabled):hover, .button:focus-visible {
+  border-color: var(--led-border);
+  box-shadow: var(--led-glow);
+}
+.outline:not(:disabled):hover, .ghost:not(:disabled):hover {
+  background: rgba(255,255,255,.075);
+  color: var(--white);
+}
+.solid:not(:disabled):hover { background: rgba(255,255,255,.09); color: var(--white); }
+@media (prefers-reduced-motion: reduce) { .button { transition: none; } }
+
+
+.button { backdrop-filter: blur(18px);  box-shadow: var(--glass-edge), 0 3px 14px rgba(0,0,0,.12); }
+.outline, .ghost { background: linear-gradient(160deg, rgba(255,255,255,.12), rgba(255,255,255,.025) 58%, rgba(255,255,255,.05)); border-color: var(--glass-border); }
+.outline:not(:disabled):hover, .ghost:not(:disabled):hover { background: linear-gradient(160deg, rgba(255,255,255,.17), rgba(255,255,255,.045) 58%, rgba(255,255,255,.07)); }
+.button:not(:disabled):hover, .button:focus-visible { box-shadow: var(--glass-edge), var(--led-glow); }

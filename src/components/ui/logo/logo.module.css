@@ -1,0 +1,45 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  transition: color var(--ease);
+}
+
+a.logo:hover {
+  color: var(--white);
+}
+
+.mark {
+  flex-shrink: 0;
+}
+
+.word {
+  font-family: var(--font-display-stack);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  margin-right: -0.3em;
+}
+
+.md .mark {
+  width: 30px;
+  height: 25px;
+}
+
+.md .word {
+  font-size: 20px;
+}
+
+.sm .mark {
+  width: 24px;
+  height: 20px;
+}
+
+.sm .word {
+  font-size: 16px;
+}
+
+
+.logo { gap: 10px; }
+.word { font-style: italic; font-size: 24px; font-weight: 600; letter-spacing: .12em; margin-right: -.12em; }
+.md .mark { width: 32px; height: 25px; }

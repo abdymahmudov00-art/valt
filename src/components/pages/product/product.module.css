@@ -1,0 +1,36 @@
+.product {
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 20px var(--gutter) 64px;
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  transition: color var(--ease);
+}
+
+.crumb:hover {
+  color: var(--white);
+}
+
+.current {
+  color: var(--text);
+}

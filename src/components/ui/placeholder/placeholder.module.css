@@ -1,0 +1,48 @@
+.placeholder {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--surface-2);
+  color: #4a4a4a;
+  transition: background var(--ease);
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+}
+
+.portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.wide {
+  aspect-ratio: 4 / 3;
+}
+
+.icon {
+  width: 34%;
+  max-width: 120px;
+  stroke: currentColor;
+  stroke-width: 0.8;
+  transition: stroke var(--ease);
+}
+
+.label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color var(--ease);
+}
+
+.light {
+  color: #9a9a9a;
+}
+
+.light .label {
+  color: #5e5e5e;
+}

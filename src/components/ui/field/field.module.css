@@ -1,0 +1,45 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input {
+  height: 46px;
+  width: 100%;
+  padding: 0 16px;
+  border: 1px solid var(--line-strong);
+  background: #000000;
+  color: var(--text);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  transition: border-color var(--ease);
+}
+
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+.input:hover,
+.input:focus {
+  outline: none;
+  border-color: var(--white);
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-dim);
+}

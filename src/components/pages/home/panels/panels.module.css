@@ -1,0 +1,19 @@
+
+.panels { border-bottom: 1px solid var(--line); }
+.grid { max-width: var(--container); margin: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.panel { position: relative; isolation: isolate; overflow: hidden; min-height: 370px; padding: 30px var(--gutter); border-right: 1px solid var(--line); scroll-margin-top: 120px; background: #030303; }
+.panel:last-child { border-right: 0; }
+.body { position: relative; z-index: 2; min-height: 305px; width: 56%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.title { white-space: nowrap; font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.text { font-size: 11px; line-height: 1.9; color: #b0b0b0; max-width: 180px; }
+.list { list-style: none; padding: 0; margin: 0; width: 100%; }
+.listLink { display: block; padding: 8px 0; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: #aaa; transition: color .2s; }
+.listLink:hover { color: #fff; }
+.mantra { margin-top: auto; display: flex; flex-direction: column; gap: 7px; font-size: 11px; line-height: 1.7; letter-spacing: .07em; color: #aaa; }
+.media { position: absolute; z-index: 0; top: 0; right: -15%; bottom: 0; width: 90%; }
+.media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #030303 3%, #030303aa 25%, transparent 70%), linear-gradient(0deg, #030303 0%, transparent 35%); }
+.fill { height: 100%; object-fit: cover; filter: grayscale(1) brightness(.35) contrast(1.25); transition: filter .4s; }
+.panel:hover .fill { filter: grayscale(1) brightness(.5) contrast(1.15); }
+.world { position: absolute; width: 90%; height: 100%; right: -22%; top: 4%; opacity: .3; transform: rotate(-24deg); stroke: #aaa; stroke-width: .45; fill: none; }
+@media (max-width: 900px) { .panel { padding: 24px 20px; min-height: 330px; } .body { min-height: 280px; width: 70%; } .text { font-size: 10px; } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .panel { border-right: 0; border-bottom: 1px solid var(--line); min-height: 300px; padding: 26px var(--gutter); } .panel:last-child { border-bottom: 0; } .body { min-height: 245px; width: 55%; } .media { width: 80%; } .world { width: 65%; } }
